@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Contagem Secreta do Papai Noel</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <header class="header">
+        <h1>🎄 O calendário dos presentes de natal 🎁</h1>
+        <p>Volte todos os dias para a próxima revelação!</p>
+    </header>
+
+    <main class="container">
+        <section class="countdown-main">
+            <h2>Tempo Restante para o Nosso Natal</h2>
+            <div id="countdown-natal" class="timer-box">Aguarde...</div>
+        </section>
+
+        <section class="presents-grid">
+            
+            <div class="present-card locked" id="present-1" data-date="15">
+                <i class="fas fa-lock"></i>
+                <h3>Dia 1 (15 de Dez)</h3>
+                <p>Status: BLOQUEADO</p>
+                <div class="lock-timer">Libera em: <span id="timer-3">23h 59m 59s</span></div>
+                <div>
+                    <button class="reveal-button" id="revealBtn">Abrir presente</button>
+                </div>
+            </div>
+
+            <div class="present-card locked" id="present-2" data-date="16">
+                <i class="fas fa-lock"></i>
+                <h3>Dia 2 (16 de Dez)</h3>
+                <p>Status: BLOQUEADO</p>
+                <div class="lock-timer">Libera em: <span id="timer-2">23h 59m 59s</span></div>
+            </div>
+            
+            <div class="present-card locked" id="present-3" data-date="17">
+                <i class="fas fa-lock"></i>
+                <h3>Dia 3 (17 de Dez)</h3>
+                <p>Status: BLOQUEADO</p>
+                <div class="lock-timer">Libera em: <span id="timer-3">23h 59m 59s</span></div>
+            </div>
+
+            <div class="present-card locked" id="present-4" data-date="18">
+                <i class="fas fa-lock"></i>
+                <h3>Dia 4 (18 de Dez)</h3>
+                <p>Status: BLOQUEADO</p>
+                <div class="lock-timer">Libera em: <span id="timer-4">23h 59m 59s</span></div>
+            </div>
+
+            <div class="present-card locked" id="present-5" data-date="19">
+                <i class="fas fa-lock"></i>
+                <h3>Dia 5 (19 de Dez)</h3>
+                <p>Status: BLOQUEADO</p>
+                <div class="lock-timer">Libera em: <span id="timer-5">23h 59m 59s</span></div>
+            </div>
+
+            <div class="present-card locked" id="present-6" data-date="20">
+                <i class="fas fa-lock"></i>
+                <h3>Dia 6 (20 de Dez)</h3>
+                <p>Status: BLOQUEADO</p>
+                <div class="lock-timer">Libera em: <span id="timer-6">23h 59m 59s</span></div>
+            </div>
+
+            <div class="present-card locked" id="present-7" data-date="21">
+                <i class="fas fa-lock"></i>
+                <h3>Dia 7 (21 de Dez)</h3>
+                <p>Status: BLOQUEADO</p>
+                <div class="lock-timer">Libera em: <span id="timer-7">23h 59m 59s</span></div>
+            </div>
+
+            <div class="present-card locked" id="present-8" data-date="22">
+                <i class="fas fa-lock"></i>
+                <h3>Dia 8 (22 de Dez)</h3>
+                <p>Status: BLOQUEADO</p>
+                <div class="lock-timer">Libera em: <span id="timer-8">23h 59m 59s</span></div>
+            </div>
+
+            <div class="present-card locked" id="present-9" data-date="23">
+                <i class="fas fa-lock"></i>
+                <h3>Dia 9 (23 de Dez)</h3>
+                <p>Status: BLOQUEADO</p>
+                <div class="lock-timer">Libera em: <span id="timer-9">23h 59m 59s</span></div>
+            </div>
+
+            <div class="present-card locked" id="present-10" data-date="24">
+                <i class="fas fa-lock"></i>
+                <h3>Dia 10 (24 de Dez)</h3>
+                <p>Status: BLOQUEADO</p>
+                <div class="lock-timer">Libera em: <span id="timer-10">23h 59m 59s</span></div>
+            </div>
+
+            <div class="present-card locked" id="present-11" data-date="25">
+                <i class="fas fa-lock"></i>
+                <h3>Dia 11 (25 de Dez)</h3>
+                <p>Status: BLOQUEADO</p>
+                <div class="lock-timer">Libera em: <span id="timer-11">23h 59m 59s</span></div>
+            </div>
+
+            </section>
+    </main>
+
+    <div class="container">
+        <section class="countdown-main">
+            <h2>Quantidade de presentes abertos:</h2>
+            <div id="countdown-presents" class="timer-box">0 / 11 🎁</div>
+        </section>
+    </div>
+
+    <footer class="footer">
+        <p>Feito com amor pelo seu namorado Noel ❤️</p>
+    </footer>
+
+<div id="modal-presente" class="modal-overlay hidden">
+    <div class="modal-content">
+        <span class="close-modal" onclick="fecharModal()">&times;</span>
+        
+        <div id="fase-senha" class="fase">
+            <h3>🔒 Este presente está trancado!</h3>
+            <p>Digite a senha encontrada no presente físico:</p>
+            <input type="text" id="input-senha" placeholder="Digite a senha aqui...">
+            <button onclick="verificarSenha()">Desbloquear</button>
+            <p id="erro-senha" class="error-msg"></p>
+        </div>
+
+        <div id="fase-abrir" class="fase hidden">
+            <h3>Toque na caixa para abrir!</h3>
+            <div class="gift-container">
+                <img src="images/gift-box.png" id="img-gift-box" onclick="clicarPresente()">
+            </div>
+            <p class="dica-clique">Toque repetidamente!</p>
+        </div>
+
+        <div id="fase-conteudo" class="fase hidden">
+            <h2 id="titulo-final">Título do Presente</h2>
+            <div id="conteudo-final-body">
+                </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+
+<script src="script.js"></script>
+</body>
+</html>
