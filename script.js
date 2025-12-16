@@ -108,7 +108,7 @@ atualizarContadorNatal();
                 // Ainda bloqueado
                 if (timerSpan) {
                     // Formatação simples do tempo
-                    const h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                    const h = Math.floor(diff / (1000 * 60 * 60));
                     const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
                     const s = Math.floor((diff % (1000 * 60)) / 1000);
                     timerSpan.textContent = `${h}h ${m}m ${s}s`;
