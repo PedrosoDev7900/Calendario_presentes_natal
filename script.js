@@ -7,10 +7,9 @@ const CONFIG_PRESENTES = {
         imagem: "images/foto-touca.jpg" 
     },
     2: {
-        senha: "natal",
-        titulo: "Dia 2: O Mistério",
-        mensagem: "Aqui vai a mensagem linda do dia 2...",
-        imagem: "images/foto-dia2.jpg"
+        senha: "I love you",
+        titulo: "Dia 2: O colar",
+        mensagem: "Ta aqui vai uma coisa engraçada, eu queria ter te dado de aniversário um colar que eu vi um vez com letra, mas fiquei empacado na frente dos colares sem saber se pegava a letra G pra você me carregar no pescoço ou a letra I por que você é a linda Isabeli né gente... fiquei confuso e não comprei, mas dessa vez eu peguei o da sua letra pra você poder andar com ele todos os dias e pensar em mim. Mas, talvez... isso não seja a única coisa pra você pensar em mim, fica uma dica para o que tem por vir: 01010000 01101100 01100001 01100011 01100001 00100000 01100100 01100101 00100000 01100011 01100001 01110010 01110010 01101111 ",
     }
     // ... Adicione até o dia 11 ...
 };
